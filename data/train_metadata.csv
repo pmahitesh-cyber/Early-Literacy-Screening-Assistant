@@ -1,0 +1,289 @@
+filename,task,expected_text,grade,student_id
+clip_0001.wav,blending,stop,KG,student_001
+clip_0002.wav,nonword_repetition,teff,KG,student_001
+clip_0003.wav,blending,mop,KG,student_001
+clip_0004.wav,deletion,eat,KG,student_001
+clip_0005.wav,blending,best,KG,student_001
+clip_0006.wav,nonword_repetition,vond,KG,student_001
+clip_0007.wav,blending,cat,KG,student_001
+clip_0008.wav,deletion,shine,KG,student_001
+clip_0009.wav,blending,mop,KG,student_001
+clip_0010.wav,nonword_repetition,plip,KG,student_001
+clip_0011.wav,blending,frog,KG,student_001
+clip_0012.wav,sentence_repetition,The yellow kitten is sleeping,KG,student_001
+clip_0013.wav,deletion,fish,1,student_002
+clip_0014.wav,blending,mop,1,student_002
+clip_0015.wav,nonword_repetition,misk,1,student_002
+clip_0016.wav,sentence_repetition,The yellow kitten is sleeping,1,student_002
+clip_0017.wav,sentence_repetition,She likes green apples,1,student_002
+clip_0018.wav,sentence_repetition,The dog ran fast,1,student_002
+clip_0019.wav,blending,sun,1,student_002
+clip_0020.wav,nonword_repetition,gloob,1,student_002
+clip_0021.wav,sentence_repetition,He built a tall sandcastle,1,student_002
+clip_0022.wav,sentence_repetition,The yellow kitten is sleeping,1,student_002
+clip_0023.wav,sentence_repetition,He built a tall sandcastle,1,student_002
+clip_0024.wav,blending,sun,1,student_002
+clip_0025.wav,deletion,cake,2,student_003
+clip_0026.wav,nonword_repetition,trant,2,student_003
+clip_0027.wav,blending,mop,2,student_003
+clip_0028.wav,deletion,top,2,student_003
+clip_0029.wav,nonword_repetition,teff,2,student_003
+clip_0030.wav,sentence_repetition,We played at the park,2,student_003
+clip_0031.wav,nonword_repetition,zarp,2,student_003
+clip_0032.wav,deletion,top,2,student_003
+clip_0033.wav,blending,mop,2,student_003
+clip_0034.wav,sentence_repetition,The yellow kitten is sleeping,2,student_003
+clip_0035.wav,sentence_repetition,The dog ran fast,2,student_003
+clip_0036.wav,sentence_repetition,We played at the park,2,student_003
+clip_0037.wav,blending,mop,3,student_004
+clip_0038.wav,deletion,top,3,student_004
+clip_0039.wav,deletion,top,3,student_004
+clip_0040.wav,deletion,cake,3,student_004
+clip_0041.wav,sentence_repetition,She likes green apples,3,student_004
+clip_0042.wav,blending,stop,3,student_004
+clip_0043.wav,sentence_repetition,Birds fly in the sky,3,student_004
+clip_0044.wav,deletion,shine,3,student_004
+clip_0045.wav,deletion,shine,3,student_004
+clip_0046.wav,deletion,eat,3,student_004
+clip_0047.wav,blending,stop,3,student_004
+clip_0048.wav,blending,plant,3,student_004
+clip_0049.wav,sentence_repetition,The yellow kitten is sleeping,KG,student_005
+clip_0050.wav,nonword_repetition,teff,KG,student_005
+clip_0051.wav,blending,stop,KG,student_005
+clip_0052.wav,sentence_repetition,He built a tall sandcastle,KG,student_005
+clip_0053.wav,sentence_repetition,We played at the park,KG,student_005
+clip_0054.wav,sentence_repetition,The dog ran fast,KG,student_005
+clip_0055.wav,nonword_repetition,plip,KG,student_005
+clip_0056.wav,blending,frog,KG,student_005
+clip_0057.wav,blending,frog,KG,student_005
+clip_0058.wav,sentence_repetition,We played at the park,KG,student_005
+clip_0059.wav,nonword_repetition,gloob,KG,student_005
+clip_0060.wav,nonword_repetition,teff,KG,student_005
+clip_0061.wav,sentence_repetition,He built a tall sandcastle,1,student_006
+clip_0062.wav,deletion,fish,1,student_006
+clip_0063.wav,sentence_repetition,Birds fly in the sky,1,student_006
+clip_0064.wav,nonword_repetition,teff,1,student_006
+clip_0065.wav,deletion,fish,1,student_006
+clip_0066.wav,deletion,lap,1,student_006
+clip_0067.wav,nonword_repetition,vond,1,student_006
+clip_0068.wav,deletion,top,1,student_006
+clip_0069.wav,sentence_repetition,He built a tall sandcastle,1,student_006
+clip_0070.wav,nonword_repetition,teff,1,student_006
+clip_0071.wav,sentence_repetition,The yellow kitten is sleeping,1,student_006
+clip_0072.wav,nonword_repetition,misk,1,student_006
+clip_0073.wav,nonword_repetition,teff,2,student_007
+clip_0074.wav,nonword_repetition,zarp,2,student_007
+clip_0075.wav,nonword_repetition,gloob,2,student_007
+clip_0076.wav,sentence_repetition,She likes green apples,2,student_007
+clip_0077.wav,sentence_repetition,The yellow kitten is sleeping,2,student_007
+clip_0078.wav,blending,train,2,student_007
+clip_0079.wav,sentence_repetition,Birds fly in the sky,2,student_007
+clip_0080.wav,sentence_repetition,He built a tall sandcastle,2,student_007
+clip_0081.wav,deletion,ball,2,student_007
+clip_0082.wav,blending,stop,2,student_007
+clip_0083.wav,blending,best,2,student_007
+clip_0084.wav,sentence_repetition,She likes green apples,2,student_007
+clip_0085.wav,sentence_repetition,The dog ran fast,3,student_008
+clip_0086.wav,blending,frog,3,student_008
+clip_0087.wav,sentence_repetition,The dog ran fast,3,student_008
+clip_0088.wav,sentence_repetition,The yellow kitten is sleeping,3,student_008
+clip_0089.wav,deletion,shine,3,student_008
+clip_0090.wav,blending,frog,3,student_008
+clip_0091.wav,blending,plant,3,student_008
+clip_0092.wav,deletion,top,3,student_008
+clip_0093.wav,deletion,ball,3,student_008
+clip_0094.wav,sentence_repetition,She likes green apples,3,student_008
+clip_0095.wav,deletion,lap,3,student_008
+clip_0096.wav,sentence_repetition,He built a tall sandcastle,3,student_008
+clip_0097.wav,deletion,arm,KG,student_009
+clip_0098.wav,deletion,eat,KG,student_009
+clip_0099.wav,sentence_repetition,She likes green apples,KG,student_009
+clip_0100.wav,deletion,cake,KG,student_009
+clip_0101.wav,blending,sun,KG,student_009
+clip_0102.wav,nonword_repetition,drap,KG,student_009
+clip_0103.wav,deletion,shine,KG,student_009
+clip_0104.wav,nonword_repetition,teff,KG,student_009
+clip_0105.wav,sentence_repetition,We played at the park,KG,student_009
+clip_0106.wav,deletion,shine,KG,student_009
+clip_0107.wav,nonword_repetition,misk,KG,student_009
+clip_0108.wav,deletion,arm,KG,student_009
+clip_0109.wav,blending,mop,1,student_010
+clip_0110.wav,deletion,fish,1,student_010
+clip_0111.wav,deletion,lap,1,student_010
+clip_0112.wav,sentence_repetition,She likes green apples,1,student_010
+clip_0113.wav,sentence_repetition,Birds fly in the sky,1,student_010
+clip_0114.wav,nonword_repetition,plip,1,student_010
+clip_0115.wav,nonword_repetition,plip,1,student_010
+clip_0116.wav,deletion,ball,1,student_010
+clip_0117.wav,sentence_repetition,The dog ran fast,1,student_010
+clip_0118.wav,nonword_repetition,plip,1,student_010
+clip_0119.wav,blending,sun,1,student_010
+clip_0120.wav,nonword_repetition,misk,1,student_010
+clip_0121.wav,deletion,lap,2,student_011
+clip_0122.wav,sentence_repetition,Birds fly in the sky,2,student_011
+clip_0123.wav,deletion,ball,2,student_011
+clip_0124.wav,sentence_repetition,The yellow kitten is sleeping,2,student_011
+clip_0125.wav,nonword_repetition,gloob,2,student_011
+clip_0126.wav,sentence_repetition,Birds fly in the sky,2,student_011
+clip_0127.wav,nonword_repetition,zarp,2,student_011
+clip_0128.wav,sentence_repetition,The yellow kitten is sleeping,2,student_011
+clip_0129.wav,sentence_repetition,She likes green apples,2,student_011
+clip_0130.wav,deletion,cake,2,student_011
+clip_0131.wav,sentence_repetition,He built a tall sandcastle,2,student_011
+clip_0132.wav,deletion,eat,2,student_011
+clip_0133.wav,deletion,eat,3,student_012
+clip_0134.wav,nonword_repetition,misk,3,student_012
+clip_0135.wav,blending,best,3,student_012
+clip_0136.wav,nonword_repetition,teff,3,student_012
+clip_0137.wav,deletion,shine,3,student_012
+clip_0138.wav,deletion,arm,3,student_012
+clip_0139.wav,sentence_repetition,We played at the park,3,student_012
+clip_0140.wav,blending,stop,3,student_012
+clip_0141.wav,nonword_repetition,plip,3,student_012
+clip_0142.wav,nonword_repetition,drap,3,student_012
+clip_0143.wav,nonword_repetition,gloob,3,student_012
+clip_0144.wav,deletion,arm,3,student_012
+clip_0145.wav,sentence_repetition,Birds fly in the sky,KG,student_013
+clip_0146.wav,blending,cat,KG,student_013
+clip_0147.wav,deletion,eat,KG,student_013
+clip_0148.wav,nonword_repetition,misk,KG,student_013
+clip_0149.wav,sentence_repetition,Birds fly in the sky,KG,student_013
+clip_0150.wav,sentence_repetition,He built a tall sandcastle,KG,student_013
+clip_0151.wav,deletion,top,KG,student_013
+clip_0152.wav,nonword_repetition,gloob,KG,student_013
+clip_0153.wav,deletion,shine,KG,student_013
+clip_0154.wav,nonword_repetition,vond,KG,student_013
+clip_0155.wav,blending,best,KG,student_013
+clip_0156.wav,deletion,lap,KG,student_013
+clip_0157.wav,deletion,cake,1,student_014
+clip_0158.wav,deletion,shine,1,student_014
+clip_0159.wav,nonword_repetition,gloob,1,student_014
+clip_0160.wav,sentence_repetition,The dog ran fast,1,student_014
+clip_0161.wav,nonword_repetition,vond,1,student_014
+clip_0162.wav,nonword_repetition,drap,1,student_014
+clip_0163.wav,deletion,lap,1,student_014
+clip_0164.wav,blending,mop,1,student_014
+clip_0165.wav,sentence_repetition,He built a tall sandcastle,1,student_014
+clip_0166.wav,nonword_repetition,gloob,1,student_014
+clip_0167.wav,deletion,shine,1,student_014
+clip_0168.wav,deletion,fish,1,student_014
+clip_0169.wav,nonword_repetition,misk,2,student_015
+clip_0170.wav,blending,sun,2,student_015
+clip_0171.wav,sentence_repetition,We played at the park,2,student_015
+clip_0172.wav,deletion,lap,2,student_015
+clip_0173.wav,sentence_repetition,The dog ran fast,2,student_015
+clip_0174.wav,nonword_repetition,drap,2,student_015
+clip_0175.wav,deletion,lap,2,student_015
+clip_0176.wav,blending,cat,2,student_015
+clip_0177.wav,deletion,eat,2,student_015
+clip_0178.wav,deletion,eat,2,student_015
+clip_0179.wav,nonword_repetition,plip,2,student_015
+clip_0180.wav,nonword_repetition,zarp,2,student_015
+clip_0181.wav,sentence_repetition,She likes green apples,3,student_016
+clip_0182.wav,blending,train,3,student_016
+clip_0183.wav,nonword_repetition,vond,3,student_016
+clip_0184.wav,deletion,shine,3,student_016
+clip_0185.wav,blending,cat,3,student_016
+clip_0186.wav,deletion,fish,3,student_016
+clip_0187.wav,deletion,eat,3,student_016
+clip_0188.wav,blending,sun,3,student_016
+clip_0189.wav,blending,train,3,student_016
+clip_0190.wav,blending,stop,3,student_016
+clip_0191.wav,deletion,arm,3,student_016
+clip_0192.wav,nonword_repetition,misk,3,student_016
+clip_0193.wav,deletion,arm,KG,student_017
+clip_0194.wav,deletion,shine,KG,student_017
+clip_0195.wav,deletion,fish,KG,student_017
+clip_0196.wav,sentence_repetition,He built a tall sandcastle,KG,student_017
+clip_0197.wav,sentence_repetition,Birds fly in the sky,KG,student_017
+clip_0198.wav,sentence_repetition,We played at the park,KG,student_017
+clip_0199.wav,sentence_repetition,He built a tall sandcastle,KG,student_017
+clip_0200.wav,nonword_repetition,gloob,KG,student_017
+clip_0201.wav,blending,plant,KG,student_017
+clip_0202.wav,blending,best,KG,student_017
+clip_0203.wav,deletion,lap,KG,student_017
+clip_0204.wav,sentence_repetition,The yellow kitten is sleeping,KG,student_017
+clip_0205.wav,deletion,ball,1,student_018
+clip_0206.wav,deletion,top,1,student_018
+clip_0207.wav,deletion,shine,1,student_018
+clip_0208.wav,blending,cat,1,student_018
+clip_0209.wav,sentence_repetition,Birds fly in the sky,1,student_018
+clip_0210.wav,nonword_repetition,plip,1,student_018
+clip_0211.wav,nonword_repetition,teff,1,student_018
+clip_0212.wav,sentence_repetition,She likes green apples,1,student_018
+clip_0213.wav,nonword_repetition,drap,1,student_018
+clip_0214.wav,deletion,top,1,student_018
+clip_0215.wav,nonword_repetition,teff,1,student_018
+clip_0216.wav,nonword_repetition,trant,1,student_018
+clip_0217.wav,blending,sun,2,student_019
+clip_0218.wav,deletion,ball,2,student_019
+clip_0219.wav,deletion,arm,2,student_019
+clip_0220.wav,nonword_repetition,trant,2,student_019
+clip_0221.wav,deletion,cake,2,student_019
+clip_0222.wav,sentence_repetition,The yellow kitten is sleeping,2,student_019
+clip_0223.wav,blending,stop,2,student_019
+clip_0224.wav,blending,mop,2,student_019
+clip_0225.wav,sentence_repetition,He built a tall sandcastle,2,student_019
+clip_0226.wav,blending,best,2,student_019
+clip_0227.wav,blending,sun,2,student_019
+clip_0228.wav,deletion,eat,2,student_019
+clip_0229.wav,deletion,fish,3,student_020
+clip_0230.wav,deletion,arm,3,student_020
+clip_0231.wav,blending,mop,3,student_020
+clip_0232.wav,nonword_repetition,trant,3,student_020
+clip_0233.wav,blending,plant,3,student_020
+clip_0234.wav,deletion,top,3,student_020
+clip_0235.wav,deletion,eat,3,student_020
+clip_0236.wav,deletion,lap,3,student_020
+clip_0237.wav,blending,sun,3,student_020
+clip_0238.wav,deletion,fish,3,student_020
+clip_0239.wav,sentence_repetition,The dog ran fast,3,student_020
+clip_0240.wav,nonword_repetition,zarp,3,student_020
+clip_0241.wav,sentence_repetition,She likes green apples,KG,student_021
+clip_0242.wav,deletion,eat,KG,student_021
+clip_0243.wav,blending,stop,KG,student_021
+clip_0244.wav,sentence_repetition,The yellow kitten is sleeping,KG,student_021
+clip_0245.wav,deletion,arm,KG,student_021
+clip_0246.wav,deletion,ball,KG,student_021
+clip_0247.wav,sentence_repetition,She likes green apples,KG,student_021
+clip_0248.wav,sentence_repetition,He built a tall sandcastle,KG,student_021
+clip_0249.wav,sentence_repetition,Birds fly in the sky,KG,student_021
+clip_0250.wav,deletion,arm,KG,student_021
+clip_0251.wav,deletion,lap,KG,student_021
+clip_0252.wav,blending,train,KG,student_021
+clip_0253.wav,sentence_repetition,Birds fly in the sky,1,student_022
+clip_0254.wav,sentence_repetition,The dog ran fast,1,student_022
+clip_0255.wav,sentence_repetition,The dog ran fast,1,student_022
+clip_0256.wav,blending,cat,1,student_022
+clip_0257.wav,deletion,top,1,student_022
+clip_0258.wav,nonword_repetition,vond,1,student_022
+clip_0259.wav,sentence_repetition,The dog ran fast,1,student_022
+clip_0260.wav,nonword_repetition,vond,1,student_022
+clip_0261.wav,deletion,fish,1,student_022
+clip_0262.wav,deletion,ball,1,student_022
+clip_0263.wav,deletion,fish,1,student_022
+clip_0264.wav,deletion,cake,1,student_022
+clip_0265.wav,deletion,ball,2,student_023
+clip_0266.wav,deletion,shine,2,student_023
+clip_0267.wav,nonword_repetition,trant,2,student_023
+clip_0268.wav,blending,plant,2,student_023
+clip_0269.wav,nonword_repetition,teff,2,student_023
+clip_0270.wav,deletion,eat,2,student_023
+clip_0271.wav,nonword_repetition,misk,2,student_023
+clip_0272.wav,deletion,cake,2,student_023
+clip_0273.wav,nonword_repetition,zarp,2,student_023
+clip_0274.wav,nonword_repetition,teff,2,student_023
+clip_0275.wav,deletion,lap,2,student_023
+clip_0276.wav,nonword_repetition,zarp,2,student_023
+clip_0277.wav,sentence_repetition,He built a tall sandcastle,3,student_024
+clip_0278.wav,blending,cat,3,student_024
+clip_0279.wav,nonword_repetition,zarp,3,student_024
+clip_0280.wav,nonword_repetition,zarp,3,student_024
+clip_0281.wav,blending,mop,3,student_024
+clip_0282.wav,blending,frog,3,student_024
+clip_0283.wav,sentence_repetition,We played at the park,3,student_024
+clip_0284.wav,deletion,fish,3,student_024
+clip_0285.wav,deletion,top,3,student_024
+clip_0286.wav,blending,stop,3,student_024
+clip_0287.wav,nonword_repetition,teff,3,student_024
+clip_0288.wav,deletion,cake,3,student_024

@@ -1,0 +1,128 @@
+{
+  "Majority Class Baseline": {
+    "oof_log_loss": 0.6458,
+    "oof_roc_auc": 0.3949,
+    "oof_accuracy": 0.6667,
+    "oof_balanced_acc": 0.5,
+    "oof_f1": 0.8,
+    "cv_mean_log_loss": 0.6438,
+    "cv_std_log_loss": 0.058,
+    "cv_mean_roc_auc": 0.5,
+    "cv_std_roc_auc": 0.0,
+    "confusion_matrix": [
+      [
+        0,
+        96
+      ],
+      [
+        0,
+        192
+      ]
+    ]
+  },
+  "MFCC (LogReg)": {
+    "oof_log_loss": 0.0006,
+    "oof_roc_auc": 1.0,
+    "oof_accuracy": 1.0,
+    "oof_balanced_acc": 1.0,
+    "oof_f1": 1.0,
+    "cv_mean_log_loss": 0.0006,
+    "cv_std_log_loss": 0.0002,
+    "cv_mean_roc_auc": 1.0,
+    "cv_std_roc_auc": 0.0,
+    "confusion_matrix": [
+      [
+        96,
+        0
+      ],
+      [
+        0,
+        192
+      ]
+    ]
+  },
+  "MFCC (GradientBoost)": {
+    "oof_log_loss": 0.0001,
+    "oof_roc_auc": 1.0,
+    "oof_accuracy": 1.0,
+    "oof_balanced_acc": 1.0,
+    "oof_f1": 1.0,
+    "cv_mean_log_loss": 0.0001,
+    "cv_std_log_loss": 0.0,
+    "cv_mean_roc_auc": 1.0,
+    "cv_std_roc_auc": 0.0,
+    "confusion_matrix": [
+      [
+        96,
+        0
+      ],
+      [
+        0,
+        192
+      ]
+    ]
+  },
+  "Pretrained Embedding (LogReg)": {
+    "oof_log_loss": 0.3747,
+    "oof_roc_auc": 0.968,
+    "oof_accuracy": 0.8576,
+    "oof_balanced_acc": 0.8906,
+    "oof_f1": 0.8812,
+    "cv_mean_log_loss": 0.3616,
+    "cv_std_log_loss": 0.4014,
+    "cv_mean_roc_auc": 0.9653,
+    "cv_std_roc_auc": 0.0586,
+    "confusion_matrix": [
+      [
+        95,
+        1
+      ],
+      [
+        40,
+        152
+      ]
+    ]
+  },
+  "Pretrained Embedding (GradientBoost)": {
+    "oof_log_loss": 0.2876,
+    "oof_roc_auc": 0.974,
+    "oof_accuracy": 0.875,
+    "oof_balanced_acc": 0.8984,
+    "oof_f1": 0.8983,
+    "cv_mean_log_loss": 0.2817,
+    "cv_std_log_loss": 0.1813,
+    "cv_mean_roc_auc": 0.9943,
+    "cv_std_roc_auc": 0.0107,
+    "confusion_matrix": [
+      [
+        93,
+        3
+      ],
+      [
+        33,
+        159
+      ]
+    ]
+  },
+  "Hybrid Multimodal (Ensemble)": {
+    "oof_log_loss": 0.0003,
+    "oof_roc_auc": 1.0,
+    "oof_accuracy": 1.0,
+    "oof_balanced_acc": 1.0,
+    "oof_f1": 1.0,
+    "cv_mean_log_loss": 0.0003,
+    "cv_std_log_loss": 0.0,
+    "cv_mean_roc_auc": 1.0,
+    "cv_std_roc_auc": 0.0,
+    "confusion_matrix": [
+      [
+        96,
+        0
+      ],
+      [
+        0,
+        192
+      ]
+    ]
+  }
+}
