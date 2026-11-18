@@ -12,19 +12,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     // AuraClinic dashboard chart styling (presentation only; data and scoring unchanged).
     if (window.Chart) {
-        Chart.defaults.color = '#a6b2c7';
-        Chart.defaults.borderColor = 'rgba(126, 143, 170, 0.16)';
+        Chart.defaults.color = '#b6a99a';
+        Chart.defaults.borderColor = 'rgba(190, 145, 105, 0.15)';
         Chart.defaults.font.family = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
         Chart.defaults.font.size = 11;
         Chart.defaults.plugins.legend.labels.usePointStyle = true;
         Chart.defaults.plugins.legend.labels.boxWidth = 8;
         Chart.defaults.plugins.legend.labels.padding = 16;
-        Chart.defaults.plugins.tooltip.backgroundColor = '#18243a';
-        Chart.defaults.plugins.tooltip.borderColor = '#34445f';
+        Chart.defaults.plugins.tooltip.backgroundColor = '#211b15';
+        Chart.defaults.plugins.tooltip.borderColor = '#6a4a32';
         Chart.defaults.plugins.tooltip.borderWidth = 1;
-        Chart.defaults.plugins.tooltip.titleColor = '#f4f6fb';
-        Chart.defaults.plugins.tooltip.bodyColor = '#c3cde0';
-        Chart.defaults.scale.grid.color = 'rgba(126, 143, 170, 0.12)';
+        Chart.defaults.plugins.tooltip.titleColor = '#f5e9dc';
+        Chart.defaults.plugins.tooltip.bodyColor = '#d6c5b3';
+        Chart.defaults.scale.grid.color = 'rgba(190, 145, 105, 0.12)';
     }
 
     // ==========================================
@@ -776,7 +776,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         labels: ['On-Track (Proficient)', 'Borderline / Monitor', 'Flagged for Review'],
                         datasets: [{
                             data: [proficientCount, borderlineCount, flaggedCount],
-                            backgroundColor: ['#16a34a', '#d97706', '#dc2626'],
+                            backgroundColor: ['#39c7a0', '#e7ad61', '#d98272'],
                             borderWidth: 2
                         }]
                     },
@@ -801,7 +801,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         datasets: [{
                             label: 'Proficiency Rate (%)',
                             data: subtaskProficiency,
-                            backgroundColor: '#2563eb',
+                            backgroundColor: '#d28b58',
                             borderRadius: 6
                         }]
                     },
@@ -823,8 +823,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     data: {
                         labels: grades.map(g => `Grade ${g}`),
                         datasets: [
-                            { label: 'On-Track', data: grades.map(g => gradeCounts[g].ok), backgroundColor: '#16a34a' },
-                            { label: 'Need Review', data: grades.map(g => gradeCounts[g].flag), backgroundColor: '#dc2626' }
+                            { label: 'On-Track', data: grades.map(g => gradeCounts[g].ok), backgroundColor: '#39c7a0' },
+                            { label: 'Need Review', data: grades.map(g => gradeCounts[g].flag), backgroundColor: '#d98272' }
                         ]
                     },
                     options: {
@@ -845,7 +845,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         datasets: [{
                             label: 'Avg Pause Ratio (%)',
                             data: [14.2, 18.6, 22.4, 16.8],
-                            backgroundColor: '#8b5cf6',
+                            backgroundColor: '#c18a60',
                             borderRadius: 6
                         }]
                     },
