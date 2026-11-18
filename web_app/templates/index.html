@@ -94,6 +94,46 @@
             </div>
         </div>
 
+        <!-- At-a-glance classroom widgets -->
+        <section class="overview-widgets" aria-label="Classroom overview widgets">
+            <article class="overview-widget outcome-widget">
+                <div class="widget-heading">
+                    <div><span class="widget-kicker">CLASSROOM SNAPSHOT</span><h2>Screening outcomes</h2></div>
+                    <span class="widget-icon icon-indigo"><i class="fa-solid fa-chart-pie"></i></span>
+                </div>
+                <div class="outcome-content">
+                    <div class="outcome-donut" id="outcome-donut" role="img" aria-label="Screening outcome distribution">
+                        <div class="donut-center"><strong id="outcome-total">{{ total_screened }}</strong><span>screenings</span></div>
+                    </div>
+                    <div class="outcome-legend">
+                        <div><span class="legend-dot dot-teal"></span><span>On track</span><strong id="outcome-ontrack">{{ on_track_count }}</strong></div>
+                        <div><span class="legend-dot dot-amber"></span><span>Monitor</span><strong id="outcome-borderline">{{ borderline_count }}</strong></div>
+                        <div><span class="legend-dot dot-coral"></span><span>Review</span><strong id="outcome-flagged">{{ flagged_count }}</strong></div>
+                    </div>
+                </div>
+                <div class="widget-footnote"><i class="fa-solid fa-circle-info"></i> Based on recorded screening results</div>
+            </article>
+
+            <article class="overview-widget review-widget">
+                <div class="widget-heading">
+                    <div><span class="widget-kicker">FOLLOW-UP</span><h2>Teacher review queue</h2></div>
+                    <span class="widget-icon icon-coral"><i class="fa-solid fa-clipboard-list"></i></span>
+                </div>
+                <div class="review-number" id="review-queue-count">{{ flagged_count }}</div>
+                <p class="widget-description">Students currently flagged for a closer look.</p>
+                <button type="button" class="widget-link" data-open-tab="tab-roster">Open student roster <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+
+            <article class="overview-widget actions-widget">
+                <div class="widget-heading">
+                    <div><span class="widget-kicker">GET STARTED</span><h2>Quick actions</h2></div>
+                    <span class="widget-icon icon-teal"><i class="fa-solid fa-bolt"></i></span>
+                </div>
+                <button type="button" class="quick-action" data-open-tab="tab-screener"><span class="quick-action-icon"><i class="fa-solid fa-microphone-lines"></i></span><span><strong>Start a screening</strong><small>Upload or record a reading clip</small></span><i class="fa-solid fa-chevron-right"></i></button>
+                <button type="button" class="quick-action" data-open-tab="tab-cases"><span class="quick-action-icon"><i class="fa-solid fa-flask"></i></span><span><strong>Explore test cases</strong><small>Try the sample student scenarios</small></span><i class="fa-solid fa-chevron-right"></i></button>
+            </article>
+        </section>
+
         <!-- Main Content Sections -->
         <main class="main-content">
             <!-- TAB 1: 1-TO-1 AUDIO SCREENER -->
