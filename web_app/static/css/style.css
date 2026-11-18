@@ -2379,3 +2379,45 @@ button,input,select,textarea { letter-spacing:-.01em; }
   .workspace-heading h1 { font-size:30px; }
   .kpi-value { font-size:26px; }
 }
+
+/* Human-friendly typography refinement */
+:root { --font:'Nunito Sans',sans-serif; }
+html, body, button, input, select, textarea {
+  font-family:'Nunito Sans',sans-serif !important;
+  letter-spacing:0;
+}
+.workspace-heading h1, .logo-title {
+  font-family:'Lora',Georgia,serif !important;
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+.workspace-heading h1 { font-size:31px; line-height:1.2; }
+.logo-title { font-size:21px; line-height:1.15; }
+.kpi-value, .donut-center strong, .review-number {
+  font-family:'Nunito Sans',sans-serif !important;
+  font-weight:800;
+  letter-spacing:-.035em;
+  font-variant-numeric:tabular-nums;
+}
+.kpi-value { font-size:27px; }
+.donut-center strong { font-size:26px; }
+.review-number { font-size:38px; }
+.card-header h2, .widget-heading h2, .quick-action strong {
+  font-family:'Nunito Sans',sans-serif !important;
+  font-weight:750;
+  letter-spacing:-.02em;
+}
+.nav-btn, .nav-group-label, .widget-kicker, .workspace-status,
+.kpi-label, .form-group label, .box-label, .widget-footnote {
+  font-family:'Nunito Sans',sans-serif !important;
+  letter-spacing:normal;
+}
+.outcome-legend strong, .record-timer {
+  font-family:'Nunito Sans',sans-serif !important;
+  font-weight:800;
+  font-variant-numeric:tabular-nums;
+}
+@media(max-width:760px) {
+  .workspace-heading h1 { font-size:27px; }
+  .kpi-value { font-size:24px; }
+}
