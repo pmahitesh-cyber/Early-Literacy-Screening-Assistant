@@ -745,7 +745,6 @@ document.addEventListener('DOMContentLoaded', () => {
             let proficientCount = 0;
             let borderlineCount = 0;
             let flaggedCount = 0;
-
             const taskCounts = {};
             const gradeCounts = { "KG": { ok: 0, flag: 0 }, "1": { ok: 0, flag: 0 }, "2": { ok: 0, flag: 0 }, "3": { ok: 0, flag: 0 } };
 
@@ -767,93 +766,250 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Chart 1: Doughnut
+            const palette = {
+                teal: '#55c6a4',
+                amber: '#e6ad69',
+                coral: '#d98576',
+                copper: '#cf9567',
+                copperLight: '#e6b184',
+                grid: 'rgba(194, 155, 119, 0.13)',
+                text: '#b8a999'
+            };
+
+            const makeGradient = (ctx, top, bottom) => {
+                const gradient = ctx.createLinearGradient(0, 0, 0, ctx.canvas.height || 260);
+                gradient.addColorStop(0, top);
+                gradient.addColorStop(1, bottom);
+                return gradient;
+            };
+
+            const commonPlugins = {
+                legend: {
+                    labels: {
+                        color: palette.text,
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        boxWidth: 8,
+                        boxHeight: 8,
+                        padding: 18,
+                        font: { family: 'Nunito Sans', size: 11, weight: '600' }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: '#241c15',
+                    titleColor: '#f5e9dc',
+                    bodyColor: '#d9c8b7',
+                    borderColor: '#684b34',
+                    borderWidth: 1,
+                    padding: 12,
+                    cornerRadius: 9,
+                    displayColors: true,
+                    titleFont: { family: 'Nunito Sans', weight: '700' },
+                    bodyFont: { family: 'Nunito Sans', weight: '600' }
+                }
+            };
+
             const ctxDoughnut = document.getElementById('chart-triage-doughnut');
             if (ctxDoughnut) {
+                const centerTotalPlugin = {
+                    id: 'literacyCenterTotal',
+                    afterDraw(chart) {
+                        const area = chart.chartArea;
+                        if (!area) return;
+                        const x = (area.left + area.right) / 2;
+                        const y = (area.top + area.bottom) / 2;
+                        const ctx = chart.ctx;
+                        ctx.save();
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        ctx.fillStyle = '#f2e7db';
+                        ctx.font = '800 27px Nunito Sans';
+                        ctx.fillText(String(data.length), x, y - 5);
+                        ctx.fillStyle = '#a99784';
+                        ctx.font = '600 10px Nunito Sans';
+                        ctx.fillText('SCREENINGS', x, y + 17);
+                        ctx.restore();
+                    }
+                };
+
                 new Chart(ctxDoughnut, {
                     type: 'doughnut',
                     data: {
-                        labels: ['On-Track (Proficient)', 'Borderline / Monitor', 'Flagged for Review'],
+                        labels: ['On track', 'Monitor', 'Flagged for review'],
                         datasets: [{
                             data: [proficientCount, borderlineCount, flaggedCount],
-                            backgroundColor: ['#39c7a0', '#e7ad61', '#d98272'],
-                            borderWidth: 2
+                            backgroundColor: [palette.teal, palette.amber, palette.coral],
+                            borderColor: '#1b1712',
+                            borderWidth: 5,
+                            hoverBorderWidth: 5,
+                            hoverOffset: 9,
+                            spacing: 3,
+                            borderRadius: 7
                         }]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        plugins: { legend: { position: 'bottom' } }
-                    }
+                        cutout: '76%',
+                        animation: { animateRotate: true, duration: 950, easing: 'easeOutQuart' },
+                        layout: { padding: 10 },
+                        plugins: {
+                            legend: { ...commonPlugins.legend, position: 'bottom' },
+                            tooltip: {
+                                ...commonPlugins.tooltip,
+                                callbacks: {
+                                    label(context) {
+                                        const value = Number(context.raw || 0);
+                                        const pct = data.length ? (value / data.length * 100).toFixed(1) : '0.0';
+                                        return ' ' + value + ' students (' + pct + '%)';
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    plugins: [centerTotalPlugin]
                 });
             }
 
-            // Chart 2: Subtask Bar
             const ctxSubtask = document.getElementById('chart-subtask-bar');
             if (ctxSubtask) {
-                const subtaskLabels = Object.keys(taskCounts);
-                const subtaskProficiency = subtaskLabels.map(k => Math.round((taskCounts[k].correct / taskCounts[k].total) * 100));
-
+                const labels = Object.keys(taskCounts);
+                const values = labels.map(k => Math.round((taskCounts[k].correct / taskCounts[k].total) * 100));
+                const context = ctxSubtask.getContext('2d');
                 new Chart(ctxSubtask, {
                     type: 'bar',
                     data: {
-                        labels: subtaskLabels.map(s => s.replace('_', ' ')),
+                        labels: labels.map(s => s.replace(/_/g, ' ')),
                         datasets: [{
-                            label: 'Proficiency Rate (%)',
-                            data: subtaskProficiency,
-                            backgroundColor: '#d28b58',
-                            borderRadius: 6
+                            label: 'Proficiency rate',
+                            data: values,
+                            backgroundColor: makeGradient(context, '#e3b184', '#a96842'),
+                            borderColor: '#d49a6b',
+                            borderWidth: 1,
+                            borderRadius: 8,
+                            borderSkipped: false,
+                            maxBarThickness: 30,
+                            hoverBackgroundColor: '#edc39e'
                         }]
                     },
                     options: {
+                        indexAxis: 'y',
                         responsive: true,
                         maintainAspectRatio: false,
-                        scales: { y: { min: 0, max: 100 } },
-                        plugins: { legend: { display: false } }
+                        animation: { duration: 850, easing: 'easeOutQuart' },
+                        layout: { padding: { right: 12 } },
+                        scales: {
+                            x: {
+                                min: 0, max: 100,
+                                grid: { color: palette.grid, drawBorder: false },
+                                border: { display: false },
+                                ticks: { color: palette.text, callback: value => value + '%', font: { family: 'Nunito Sans', size: 10 } }
+                            },
+                            y: {
+                                grid: { display: false },
+                                border: { display: false },
+                                ticks: { color: '#e5d7c8', font: { family: 'Nunito Sans', size: 11, weight: '600' } }
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: { ...commonPlugins.tooltip, callbacks: { label: context => ' ' + context.raw + '% proficient' } }
+                        }
                     }
                 });
             }
 
-            // Chart 3: Grade Stacked Bar
             const ctxGrade = document.getElementById('chart-grade-bar');
             if (ctxGrade) {
                 const grades = ['KG', '1', '2', '3'];
                 new Chart(ctxGrade, {
                     type: 'bar',
                     data: {
-                        labels: grades.map(g => `Grade ${g}`),
+                        labels: grades.map(g => 'Grade ' + g),
                         datasets: [
-                            { label: 'On-Track', data: grades.map(g => gradeCounts[g].ok), backgroundColor: '#39c7a0' },
-                            { label: 'Need Review', data: grades.map(g => gradeCounts[g].flag), backgroundColor: '#d98272' }
+                            {
+                                label: 'On track',
+                                data: grades.map(g => gradeCounts[g].ok),
+                                backgroundColor: palette.teal,
+                                borderRadius: 6,
+                                borderSkipped: false,
+                                maxBarThickness: 35
+                            },
+                            {
+                                label: 'Needs review',
+                                data: grades.map(g => gradeCounts[g].flag),
+                                backgroundColor: palette.coral,
+                                borderRadius: 6,
+                                borderSkipped: false,
+                                maxBarThickness: 35
+                            }
                         ]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        scales: { x: { stacked: true }, y: { stacked: true } }
+                        animation: { duration: 850, easing: 'easeOutQuart' },
+                        scales: {
+                            x: {
+                                stacked: true,
+                                grid: { display: false },
+                                border: { display: false },
+                                ticks: { color: palette.text, font: { family: 'Nunito Sans', size: 10 } }
+                            },
+                            y: {
+                                stacked: true,
+                                beginAtZero: true,
+                                grid: { color: palette.grid, drawBorder: false },
+                                border: { display: false },
+                                ticks: { color: palette.text, precision: 0, font: { family: 'Nunito Sans', size: 10 } }
+                            }
+                        },
+                        plugins: commonPlugins
                     }
                 });
             }
 
-            // Chart 4: Average Hesitation by Subtask
             const ctxPause = document.getElementById('chart-pause-bar');
             if (ctxPause) {
+                const labels = ['Phoneme blending', 'Phoneme deletion', 'Nonword repetition', 'Sentence repetition'];
+                const values = [14.2, 18.6, 22.4, 16.8];
+                const context = ctxPause.getContext('2d');
                 new Chart(ctxPause, {
                     type: 'bar',
                     data: {
-                        labels: ['Phoneme Blending', 'Phoneme Deletion', 'Nonword Repetition', 'Sentence Repetition'],
+                        labels: labels,
                         datasets: [{
-                            label: 'Avg Pause Ratio (%)',
-                            data: [14.2, 18.6, 22.4, 16.8],
-                            backgroundColor: '#c18a60',
-                            borderRadius: 6
+                            label: 'Average pause ratio',
+                            data: values,
+                            backgroundColor: makeGradient(context, '#e5b78e', '#925b3b'),
+                            borderColor: '#c68b5d',
+                            borderWidth: 1,
+                            borderRadius: 8,
+                            borderSkipped: false,
+                            maxBarThickness: 34
                         }]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        scales: { y: { min: 0, max: 35 } },
-                        plugins: { legend: { display: false } }
+                        animation: { duration: 850, easing: 'easeOutQuart' },
+                        scales: {
+                            x: {
+                                grid: { display: false },
+                                border: { display: false },
+                                ticks: { color: palette.text, maxRotation: 0, minRotation: 0, font: { family: 'Nunito Sans', size: 9 } }
+                            },
+                            y: {
+                                min: 0, max: 35,
+                                grid: { color: palette.grid, drawBorder: false },
+                                border: { display: false },
+                                ticks: { color: palette.text, callback: value => value + '%', font: { family: 'Nunito Sans', size: 10 } }
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: { ...commonPlugins.tooltip, callbacks: { label: context => ' ' + context.raw + '% average pause ratio' } }
+                        }
                     }
                 });
             }
