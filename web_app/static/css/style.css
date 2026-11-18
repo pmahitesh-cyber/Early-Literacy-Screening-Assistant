@@ -1384,3 +1384,214 @@ body {
         display: none !important;
     }
 }
+
+
+/* ==========================================================
+   AuraClinic-inspired dark UI refresh
+   Adapted for the Early Literacy Screening Assistant.
+   Keeps existing markup, routes, and JavaScript behavior intact.
+   ========================================================== */
+:root {
+    color-scheme: dark;
+    --primary: #818cf8;
+    --primary-hover: #6366f1;
+    --primary-light: rgba(99, 102, 241, 0.14);
+    --secondary: #94a3b8;
+    --success: #34d399;
+    --success-light: rgba(16, 185, 129, 0.12);
+    --warning: #fbbf24;
+    --warning-light: rgba(245, 158, 11, 0.12);
+    --danger: #fb7185;
+    --danger-light: rgba(244, 63, 94, 0.12);
+    --background: #0b1120;
+    --surface: #151f32;
+    --border: #26344b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #a8b5c8;
+    --text-muted: #718096;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, .18);
+    --shadow: 0 8px 24px rgba(0, 0, 0, .24);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, .38);
+}
+html { min-height: 100%; background: var(--background); }
+body {
+    min-height: 100vh;
+    color: var(--text-primary);
+    background:
+        radial-gradient(ellipse at 12% 0%, rgba(99, 102, 241, .12), transparent 34%),
+        radial-gradient(ellipse at 92% 8%, rgba(56, 189, 248, .06), transparent 28%),
+        var(--background);
+}
+.app-container { max-width: 1500px; padding: 24px clamp(14px, 2.4vw, 34px); }
+.navbar {
+    background: rgba(21, 31, 50, .92);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+}
+.logo-icon {
+    color: #c7d2fe;
+    background: linear-gradient(145deg, rgba(99,102,241,.28), rgba(56,189,248,.12));
+    border: 1px solid rgba(129,140,248,.24);
+}
+.logo-title { color: #f8fafc; }
+.logo-subtitle { color: #94a3b8; }
+.nav-btn { color: #a8b5c8; }
+.nav-btn:hover { color: #f8fafc; background: #202d43; }
+.nav-btn.active {
+    color: #fff;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    box-shadow: 0 5px 16px rgba(79,70,229,.28);
+}
+.kpi-card, .card, .case-card, .chart-box, .rti-card,
+.diagnostics-box, .intervention-box, .spectrogram-box,
+.recorder-box, .file-info, .modal-card {
+    color: var(--text-primary);
+    background: var(--surface);
+    border-color: var(--border);
+    box-shadow: var(--shadow-sm);
+}
+.kpi-card { border-radius: 14px; }
+.kpi-card:hover, .case-card:hover { box-shadow: var(--shadow); }
+.kpi-blue { color: #a5b4fc; background: rgba(99,102,241,.16); }
+.kpi-green { color: #6ee7b7; background: rgba(16,185,129,.14); }
+.kpi-yellow { color: #fcd34d; background: rgba(245,158,11,.14); }
+.kpi-red { color: #fda4af; background: rgba(244,63,94,.14); }
+.kpi-value, .card-header h2, .case-title, .chart-box h3,
+.rti-card h3, .diagnostics-box h4, .intervention-box h4,
+.spectrogram-box h4 { color: #f1f5f9; }
+.kpi-label, .card-subtitle, .box-label, .form-group label,
+.case-desc, .cases-intro, .record-hint, .rti-card p,
+.marker-title, .studio-instruction { color: var(--text-secondary); }
+.card-header {
+    background: #19263b;
+    border-bottom-color: var(--border);
+}
+.card-body { background: transparent; }
+.sample-loader-box, .audio-input-modes, .case-meta,
+.marker-item, .metric-highlight-card, .tech-notes-box {
+    background: #101a2b;
+    border-color: var(--border);
+}
+.form-group input, .form-group select, .filter-group select,
+.filter-group input, input, select, textarea {
+    color: var(--text-primary);
+    background-color: #0f1a2b;
+    border-color: #34445d;
+}
+.form-group input::placeholder, input::placeholder, textarea::placeholder {
+    color: #718096;
+}
+.form-group input:focus, .form-group select:focus,
+.filter-group select:focus, .filter-group input:focus,
+input:focus, select:focus, textarea:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 3px rgba(99,102,241,.18);
+    outline: none;
+}
+select option { color: #f1f5f9; background: #151f32; }
+.mode-btn {
+    color: var(--text-secondary);
+    background: #101a2b;
+    border-color: var(--border);
+}
+.mode-btn:hover, .mode-btn.active {
+    color: #c7d2fe;
+    background: rgba(99,102,241,.16);
+    border-color: #6366f1;
+}
+.drop-zone {
+    color: var(--text-primary);
+    background: #101a2b;
+    border-color: #43536d;
+}
+.drop-zone:hover, .drop-zone.dragover {
+    background: rgba(99,102,241,.12);
+    border-color: #818cf8;
+}
+.drop-text { color: #e2e8f0; }
+.drop-hint { color: #94a3b8; }
+.btn-outline {
+    color: #cbd5e1;
+    background: #1b2940;
+    border-color: #34445d;
+}
+.btn-outline:hover { color: #fff; background: #263650; }
+.btn-primary {
+    color: #fff;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+.btn-primary:hover { background: linear-gradient(135deg, #818cf8, #6366f1); }
+.badge-info, .studio-task-tag {
+    color: #c7d2fe;
+    background: rgba(99,102,241,.16);
+    border-color: rgba(129,140,248,.28);
+}
+.chip-fluent { background: rgba(16,185,129,.12); border-color: rgba(52,211,153,.28); }
+.chip-fluent .phoneme-sound, .chip-fluent .phoneme-label { color: #6ee7b7; }
+.chip-hesitant { background: rgba(245,158,11,.12); border-color: rgba(251,191,36,.28); }
+.chip-hesitant .phoneme-sound, .chip-hesitant .phoneme-label { color: #fcd34d; }
+.chip-distorted { background: rgba(244,63,94,.12); border-color: rgba(251,113,133,.28); }
+.chip-distorted .phoneme-sound, .chip-distorted .phoneme-label { color: #fda4af; }
+.spec-img-wrap { background: #0b1120; }
+.studio-card {
+    color: var(--text-primary);
+    background: linear-gradient(145deg, #19263b, #121c2e);
+    border: 1px solid #34445d;
+    box-shadow: var(--shadow);
+}
+.studio-card:hover { border-color: #818cf8; }
+.studio-task-tag { color: #c7d2fe; background: rgba(99,102,241,.18); }
+.studio-grade-tag { color: #cbd5e1; background: #26344b; }
+.studio-prompt-text { color: #f8fafc; }
+.studio-instruction { color: #a8b5c8; }
+.studio-feedback-box {
+    color: #d1fae5;
+    background: rgba(16,185,129,.12);
+    border-color: rgba(52,211,153,.28);
+}
+.studio-feedback-box h3 { color: #6ee7b7; }
+.studio-feedback-box p { color: #a7f3d0; }
+.modal-overlay { background: rgba(2, 6, 23, .78); }
+.modal-card { background: #151f32; border: 1px solid var(--border); }
+.modal-header, .modal-footer { border-color: var(--border); }
+.modal-footer { background: #19263b; }
+.report-header h1, .report-section h3 { color: #f1f5f9; }
+.report-header span, .report-footer { color: #a8b5c8; }
+.report-table td { color: #dbe4f0; border-color: #26344b; }
+.modal-triage-badge { color: #fda4af; background: rgba(244,63,94,.14); border-color: rgba(251,113,133,.28); }
+.data-table th { color: #cbd5e1; background: #1b2940; border-color: var(--border); }
+.data-table td { color: #dbe4f0; border-color: var(--border); }
+.data-table tr:hover { background: #1c2a40; }
+.data-table tr.row-baseline { background: rgba(244,63,94,.09); }
+.data-table tr.row-highlight { background: rgba(16,185,129,.09); }
+.data-table tr.row-winner { background: rgba(99,102,241,.10); }
+.tech-notes-box { border-left-color: #818cf8; }
+.app-footer { border-color: var(--border); color: #718096; }
+.text-success { color: #6ee7b7 !important; }
+.text-danger { color: #fda4af !important; }
+.text-warning { color: #fcd34d !important; }
+a { color: #a5b4fc; }
+a:hover { color: #c7d2fe; }
+button:focus-visible, a:focus-visible, input:focus-visible,
+select:focus-visible { outline: 2px solid #818cf8; outline-offset: 2px; }
+audio { filter: invert(.88) hue-rotate(180deg); }
+@media (max-width: 720px) {
+    .app-container { padding: 12px; }
+    .navbar { padding: 14px; }
+    .nav-brand { align-items: flex-start; }
+    .nav-links { width: 100%; }
+    .nav-btn { flex: 1 1 145px; justify-content: center; }
+    .kpi-banner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .kpi-card { padding: 13px; gap: 10px; }
+    .kpi-icon { width: 40px; height: 40px; }
+    .kpi-value { font-size: 1.35rem; }
+}
+@media print {
+    :root { color-scheme: light; }
+    body { color: #0f172a !important; background: #fff !important; }
+    .modal-card { color: #0f172a !important; background: #fff !important; }
+    .report-header h1, .report-section h3, .report-table td { color: #0f172a !important; }
+    .report-header span, .report-footer { color: #475569 !important; }
+}
