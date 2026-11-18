@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Early Literacy Screening Assistant | Interactive Classroom Studio</title>
+    <title>Literacy Studio | Early Literacy Screening</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,33 +17,47 @@
             <div class="nav-brand">
                 <div class="logo-icon"><i class="fa-solid fa-book-open-reader"></i></div>
                 <div>
-                    <h1 class="logo-title">Early Literacy Screening Assistant</h1>
-                    <span class="logo-subtitle">DrivenData Goodnight Moon Challenge • Real-Time Classroom Triage Studio</span>
+                    <h1 class="logo-title">Literacy<span>Studio</span></h1>
+                    <span class="logo-subtitle">EARLY LEARNING INTELLIGENCE</span>
                 </div>
             </div>
-            <div class="nav-links">
-                <button class="nav-btn active" data-tab="tab-screener"><i class="fa-solid fa-microphone-lines"></i> 1-to-1 Screener</button>
-                <button class="nav-btn" data-tab="tab-cases"><i class="fa-solid fa-flask-vial"></i> Real-Time Cases</button>
-                <button class="nav-btn" data-tab="tab-student-studio"><i class="fa-solid fa-gamepad"></i> Student Studio</button>
-                <button class="nav-btn" data-tab="tab-analytics"><i class="fa-solid fa-chart-pie"></i> Cohort Analytics</button>
-                <button class="nav-btn" data-tab="tab-roster"><i class="fa-solid fa-users"></i> Student Roster ({{ total_screened }})</button>
-                <button class="nav-btn" data-tab="tab-metrics"><i class="fa-solid fa-scale-balanced"></i> Benchmark Metrics</button>
-                <button class="nav-btn" data-tab="tab-interventions"><i class="fa-solid fa-lightbulb"></i> RTI Playbook</button>
+            <nav class="nav-links" aria-label="Main navigation">
+                <div class="nav-group">
+                    <span class="nav-group-label">SCREENING</span>
+                    <button class="nav-btn active" data-tab="tab-screener"><i class="fa-solid fa-microphone-lines"></i><span>1-to-1 Screener</span></button>
+                    <button class="nav-btn" data-tab="tab-cases"><i class="fa-solid fa-flask-vial"></i><span>Real-Time Cases</span></button>
+                    <button class="nav-btn" data-tab="tab-student-studio"><i class="fa-solid fa-gamepad"></i><span>Student Studio</span></button>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-group-label">CLASSROOM</span>
+                    <button class="nav-btn" data-tab="tab-roster"><i class="fa-solid fa-users"></i><span>Student Roster</span><span class="nav-count">{{ total_screened }}</span></button>
+                    <button class="nav-btn" data-tab="tab-analytics"><i class="fa-solid fa-chart-pie"></i><span>Cohort Analytics</span></button>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-group-label">INSIGHTS</span>
+                    <button class="nav-btn" data-tab="tab-metrics"><i class="fa-solid fa-scale-balanced"></i><span>Benchmark Metrics</span></button>
+                    <button class="nav-btn" data-tab="tab-interventions"><i class="fa-solid fa-lightbulb"></i><span>RTI Playbook</span></button>
+                </div>
+            </nav>
+            <div class="sidebar-bottom">
+                <div class="sidebar-help-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div><strong>Classroom workspace</strong><span>Literacy insights at a glance</span></div>
+                <span class="sidebar-live-dot" aria-label="System ready"></span>
             </div>
         </header>
 
         <!-- AuraClinic-inspired workspace header -->
         <div class="workspace-topbar">
             <div class="workspace-breadcrumb">
-                <span>Workspace</span><i class="fa-solid fa-chevron-right"></i><strong>Literacy Screening</strong>
+                <span>Workspace</span><i class="fa-solid fa-chevron-right"></i><strong>Overview</strong>
             </div>
             <div class="workspace-status"><span class="status-pulse"></span> Screening system ready</div>
         </div>
         <section class="workspace-heading">
             <div>
                 <p class="eyebrow">CLASSROOM INTELLIGENCE</p>
-                <h1>Screening Overview</h1>
-                <p>Monitor student reading development and review screening outcomes.</p>
+                <h1>Good morning, Educator</h1>
+                <p>Here is what is happening across your literacy screening workspace.</p>
             </div>
             <div class="heading-mark"><i class="fa-solid fa-book-open-reader"></i></div>
         </section>
