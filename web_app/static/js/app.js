@@ -51,6 +51,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Classroom overview widgets use the same cohort endpoint as the roster and analytics.
+    const overviewDonut = document.getElementById('outcome-donut');
+    const overviewTotal = document.getElementById('outcome-total');
+    const overviewOnTrack = document.getElementById('outcome-ontrack');
+    const overviewBorderline = document.getElementById('outcome-borderline');
+    const overviewFlagged = document.getElementById('outcome-flagged');
+    const reviewQueueCount = document.getElementById('review-queue-count');
+
+    function paintOutcomeWidget(total, onTrack, borderline, flagged) {
+        if (!overviewDonut) return;
+        const safeTotal = Math.max(0, total);
+        const pctOnTrack = safeTotal ? onTrack / safeTotal * 100 : 0;
+        const pctBorderline = safeTotal ? borderline / safeTotal * 100 : 0;
+        const pctFlagged = safeTotal ? flagged / safeTotal * 100 : 0;
+        const stop1 = pctOnTrack * 3.6;
+        const stop2 = (pctOnTrack + pctBorderline) * 3.6;
+        overviewDonut.style.background = safeTotal
+            ? `conic-gradient(#36c9a0 0deg ${stop1}deg, #efb84f ${stop1}deg ${stop2}deg, #f0788c ${stop2}deg 360deg)`
+            : 'conic-gradient(#34445e 0deg 360deg)';
+        if (overviewTotal) overviewTotal.textContent = safeTotal.toLocaleString();
+        if (overviewOnTrack) overviewOnTrack.textContent = onTrack.toLocaleString();
+        if (overviewBorderline) overviewBorderline.textContent = borderline.toLocaleString();
+        if (overviewFlagged) overviewFlagged.textContent = flagged.toLocaleString();
+        if (reviewQueueCount) reviewQueueCount.textContent = flagged.toLocaleString();
+    }
+
+    if (overviewDonut) {
+        const initialTotal = Number(overviewTotal?.textContent || 0);
+        const initialOnTrack = Number(overviewOnTrack?.textContent || 0);
+        const initialBorderline = Number(overviewBorderline?.textContent || 0);
+        const initialFlagged = Number(overviewFlagged?.textContent || 0);
+        paintOutcomeWidget(initialTotal, initialOnTrack, initialBorderline, initialFlagged);
+
+        fetch('/api/cohort')
+            .then(response => response.ok ? response.json() : Promise.reject(new Error('Cohort data unavailable')))
+            .then(rows => {
+                if (!Array.isArray(rows)) return;
+                let onTrack = 0, borderline = 0, flagged = 0;
+                rows.forEach(row => {
+                    const status = String(row.screening_status || '').toLowerCase();
+                    if (status.includes('proficient')) onTrack++;
+                    else if (status.includes('borderline') || status.includes('monitor')) borderline++;
+                    else if (status.includes('flagged')) flagged++;
+                });
+                paintOutcomeWidget(rows.length, onTrack, borderline, flagged);
+            })
+            .catch(error => console.info('Overview remains on server-rendered cohort totals:', error.message));
+    }
+
+    document.querySelectorAll('[data-open-tab]').forEach(action => {
+        action.addEventListener('click', () => {
+            const target = action.getAttribute('data-open-tab');
+            const navButton = document.querySelector(`.nav-btn[data-tab="${target}"]`);
+            if (navButton) navButton.click();
+        });
+    });
+
     // ==========================================
     // 2. Pure JS 16-Bit PCM WAV Audio Encoder
     // Converts Web Audio buffer to standard canonical WAV
