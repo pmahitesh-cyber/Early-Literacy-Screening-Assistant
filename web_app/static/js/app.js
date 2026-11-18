@@ -767,13 +767,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const palette = {
-                teal: '#55c6a4',
-                amber: '#e6ad69',
-                coral: '#d98576',
-                copper: '#cf9567',
-                copperLight: '#e6b184',
-                grid: 'rgba(194, 155, 119, 0.13)',
-                text: '#b8a999'
+                teal: '#a9cbbb',
+                amber: '#c8cbd2',
+                coral: '#8f969f',
+                copper: '#dfe3e9',
+                copperLight: '#ffffff',
+                grid: 'rgba(205, 212, 222, 0.12)',
+                text: '#aeb4bf'
             };
 
             const makeGradient = (ctx, top, bottom) => {
@@ -796,10 +796,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 },
                 tooltip: {
-                    backgroundColor: '#241c15',
-                    titleColor: '#f5e9dc',
-                    bodyColor: '#d9c8b7',
-                    borderColor: '#684b34',
+                    backgroundColor: '#171a20',
+                    titleColor: '#f4f5f7',
+                    bodyColor: '#c4c9d2',
+                    borderColor: '#555c68',
                     borderWidth: 1,
                     padding: 12,
                     cornerRadius: 9,
@@ -822,10 +822,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.save();
                         ctx.textAlign = 'center';
                         ctx.textBaseline = 'middle';
-                        ctx.fillStyle = '#f2e7db';
+                        ctx.fillStyle = '#f4f5f7';
                         ctx.font = '800 27px Nunito Sans';
                         ctx.fillText(String(data.length), x, y - 5);
-                        ctx.fillStyle = '#a99784';
+                        ctx.fillStyle = '#9299a5';
                         ctx.font = '600 10px Nunito Sans';
                         ctx.fillText('SCREENINGS', x, y + 17);
                         ctx.restore();
@@ -883,13 +883,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         datasets: [{
                             label: 'Proficiency rate',
                             data: values,
-                            backgroundColor: makeGradient(context, '#e3b184', '#a96842'),
-                            borderColor: '#d49a6b',
+                            backgroundColor: makeGradient(context, '#f0f2f5', '#737b87'),
+                            borderColor: '#cbd0d8',
                             borderWidth: 1,
                             borderRadius: 8,
                             borderSkipped: false,
                             maxBarThickness: 30,
-                            hoverBackgroundColor: '#edc39e'
+                            hoverBackgroundColor: '#ffffff'
                         }]
                     },
                     options: {
@@ -981,8 +981,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         datasets: [{
                             label: 'Average pause ratio',
                             data: values,
-                            backgroundColor: makeGradient(context, '#e5b78e', '#925b3b'),
-                            borderColor: '#c68b5d',
+                            backgroundColor: makeGradient(context, '#e3e6eb', '#686f7b'),
+                            borderColor: '#b9c0ca',
                             borderWidth: 1,
                             borderRadius: 8,
                             borderSkipped: false,
