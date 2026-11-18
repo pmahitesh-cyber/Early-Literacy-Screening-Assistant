@@ -2421,3 +2421,56 @@ html, body, button, input, select, textarea {
   .workspace-heading h1 { font-size:27px; }
   .kpi-value { font-size:24px; }
 }
+
+
+/* Analytics chart presentation */
+.analytics-charts-grid { gap:18px; align-items:stretch; }
+.chart-box {
+  position:relative;
+  padding:19px 20px 17px;
+  border-radius:15px;
+  background:
+    radial-gradient(ellipse at 92% 0%,rgba(196,133,85,.075),transparent 42%),
+    linear-gradient(145deg,#1c1915,#151310);
+  border:1px solid #3c3025;
+  box-shadow:0 10px 28px rgba(0,0,0,.2);
+  overflow:hidden;
+}
+.chart-box::before {
+  content:"";
+  position:absolute;
+  left:0; top:17px; bottom:17px;
+  width:2px;
+  border-radius:3px;
+  background:linear-gradient(180deg,#d9a276,rgba(217,162,118,0));
+  opacity:.65;
+}
+.chart-box h3 {
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:0 0 17px;
+  color:#f0e5d9;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:-.015em;
+}
+.chart-box h3 i {
+  display:inline-grid;
+  place-items:center;
+  width:27px; height:27px;
+  border-radius:8px;
+  color:#e3ae82;
+  background:rgba(210,139,88,.13);
+  font-size:11px;
+}
+.canvas-wrap {
+  height:290px;
+  padding:5px 4px 0;
+}
+.chart-box canvas { filter:drop-shadow(0 4px 8px rgba(0,0,0,.10)); }
+@media(max-width:760px) {
+  .chart-box { padding:16px 14px; }
+  .canvas-wrap { height:250px; }
+}
