@@ -770,10 +770,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 teal: '#a9cbbb',
                 amber: '#c8cbd2',
                 coral: '#8f969f',
-                copper: '#dfe3e9',
+                copper: '#e8edf4',
                 copperLight: '#ffffff',
-                grid: 'rgba(205, 212, 222, 0.12)',
-                text: '#aeb4bf'
+                grid: 'rgba(205, 212, 222, 0.10)',
+                text: '#b9c0ca'
             };
 
             const makeGradient = (ctx, top, bottom) => {
@@ -838,19 +838,23 @@ document.addEventListener('DOMContentLoaded', () => {
                         labels: ['On track', 'Monitor', 'Flagged for review'],
                         datasets: [{
                             data: [proficientCount, borderlineCount, flaggedCount],
-                            backgroundColor: [palette.teal, palette.amber, palette.coral],
-                            borderColor: '#1b1712',
+                            backgroundColor: [
+                                'rgba(169,203,187,0.95)',
+                                'rgba(205,211,220,0.95)',
+                                'rgba(126,137,153,0.98)'
+                            ],
+                            borderColor: '#171a20',
                             borderWidth: 5,
                             hoverBorderWidth: 5,
-                            hoverOffset: 9,
-                            spacing: 3,
-                            borderRadius: 7
+                            hoverOffset: 13,
+                            spacing: 4,
+                            borderRadius: 10
                         }]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        cutout: '76%',
+                        cutout: '80%',
                         animation: { animateRotate: true, duration: 950, easing: 'easeOutQuart' },
                         layout: { padding: 10 },
                         plugins: {
@@ -883,7 +887,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         datasets: [{
                             label: 'Proficiency rate',
                             data: values,
-                            backgroundColor: makeGradient(context, '#f0f2f5', '#737b87'),
+                            backgroundColor: makeGradient(context, '#ffffff', '#858e9c'),
                             borderColor: '#cbd0d8',
                             borderWidth: 1,
                             borderRadius: 8,
@@ -930,7 +934,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             {
                                 label: 'On track',
                                 data: grades.map(g => gradeCounts[g].ok),
-                                backgroundColor: palette.teal,
+                                backgroundColor: 'rgba(169,203,187,0.92)',
                                 borderRadius: 6,
                                 borderSkipped: false,
                                 maxBarThickness: 35
@@ -938,7 +942,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             {
                                 label: 'Needs review',
                                 data: grades.map(g => gradeCounts[g].flag),
-                                backgroundColor: palette.coral,
+                                backgroundColor: 'rgba(133,145,161,0.92)',
                                 borderRadius: 6,
                                 borderSkipped: false,
                                 maxBarThickness: 35
@@ -981,7 +985,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         datasets: [{
                             label: 'Average pause ratio',
                             data: values,
-                            backgroundColor: makeGradient(context, '#e3e6eb', '#686f7b'),
+                            backgroundColor: makeGradient(context, '#e8edf4', '#687383'),
                             borderColor: '#b9c0ca',
                             borderWidth: 1,
                             borderRadius: 8,
