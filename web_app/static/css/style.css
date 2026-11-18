@@ -2341,3 +2341,41 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible {
   .workspace-heading h1 { font-size:26px; }
   .kpi-card { min-height:84px; }
 }
+
+/* Typography refinement: editorial display + crisp product UI */
+:root { --font:'Plus Jakarta Sans',sans-serif; }
+html, body, button, input, select, textarea {
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-feature-settings:"ss01" on, "cv11" on;
+}
+.workspace-heading h1,
+.logo-title,
+.kpi-value,
+.donut-center strong,
+.review-number {
+  font-family:'Cormorant Garamond',Georgia,serif !important;
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+.workspace-heading h1 { font-size:36px; line-height:1.08; }
+.logo-title { font-size:22px; line-height:1; }
+.kpi-value { font-size:31px; line-height:1; }
+.donut-center strong { font-size:29px; }
+.review-number { font-size:43px; }
+.nav-btn,.nav-group-label,.widget-kicker,.workspace-status,
+.kpi-label,.form-group label,.box-label,.widget-footnote {
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+}
+.outcome-legend strong,.record-timer {
+  font-family:'IBM Plex Mono',monospace !important;
+  font-variant-numeric:tabular-nums;
+}
+.card-header h2,.widget-heading h2,.quick-action strong {
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+  letter-spacing:-.035em;
+}
+button,input,select,textarea { letter-spacing:-.01em; }
+@media(max-width:760px) {
+  .workspace-heading h1 { font-size:30px; }
+  .kpi-value { font-size:26px; }
+}
