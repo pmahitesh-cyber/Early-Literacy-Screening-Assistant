@@ -1918,3 +1918,99 @@ body {
   .kpi-banner { grid-template-columns:1fr; }
   .nav-btn { font-size:9px; }
 }
+
+
+/* AuraClinic finishing pass: sidebar navigation, surface hierarchy and responsive details */
+.app-container { padding-top: 0; }
+.navbar { justify-content:flex-start; }
+.nav-brand { width:100%; }
+.logo-title { font-size:16px; font-weight:800; }
+.logo-title span { color:#a69fff; }
+.nav-links { width:100%; gap:18px; }
+.nav-group { display:flex; flex-direction:column; gap:5px; }
+.nav-group-label {
+  padding:0 11px 5px;
+  color:#697992;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.13em;
+}
+.nav-links::before { display:none; }
+.nav-btn { position:relative; }
+.nav-btn i { color:#8592aa; }
+.nav-btn.active i { color:#aaa4ff; }
+.nav-count {
+  margin-left:auto;
+  min-width:22px;
+  padding:2px 6px;
+  border-radius:6px;
+  background:#26334a;
+  color:#c5cde0;
+  font-size:10px;
+  text-align:center;
+}
+.sidebar-bottom {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 10px;
+  border:1px solid #29364c;
+  border-radius:11px;
+  background:#151f32;
+}
+.sidebar-help-icon {
+  display:flex; align-items:center; justify-content:center;
+  width:34px; height:34px; flex:0 0 34px;
+  border-radius:9px; color:#b4adff;
+  background:rgba(139,131,246,.15);
+}
+.sidebar-bottom strong { display:block; color:#e6eaf3; font-size:10px; }
+.sidebar-bottom span:not(.sidebar-live-dot) { display:block; margin-top:3px; color:#8492a9; font-size:9px; }
+.sidebar-live-dot { width:7px; height:7px; margin-left:auto; border-radius:50%; background:#43d6a0; }
+.workspace-topbar { position:relative; }
+.workspace-heading { padding:3px 0 4px; }
+.kpi-card { position:relative; overflow:hidden; }
+.kpi-card::after {
+  content:""; position:absolute; right:-22px; bottom:-34px;
+  width:95px; height:95px; border-radius:50%;
+  background:rgba(139,131,246,.045);
+}
+.kpi-icon { flex:0 0 42px; }
+.card-header { gap:14px; }
+.card-header .badge, .card-header .header-actions { flex-shrink:0; }
+.result-card .card-body { min-height:350px; }
+.empty-state { min-height:300px; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+.empty-state p { max-width:430px; }
+.score-card, .phoneme-box, .marker-item, .intervention-box, .diagnostics-box,
+.spectrogram-box, .chart-box, .rti-card, .case-card, .studio-card {
+  border-radius:12px;
+}
+.scores-grid { gap:11px; }
+.score-card { background:#17243a; border:1px solid #2a3952; }
+.score-card-primary { border-color:rgba(139,131,246,.42); }
+.phoneme-box { background:#101a2b; border:1px solid #293750; }
+.chart-box h3 { font-size:13px; }
+.table-responsive { border:1px solid #293750; border-radius:10px; }
+.data-table { min-width:720px; }
+.data-table th:first-child { border-radius:8px 0 0 0; }
+.data-table tr:last-child td { border-bottom:0; }
+.filter-bar { align-items:center; }
+.filter-group select, .filter-group input { border-radius:8px; }
+.btn-primary { box-shadow:0 5px 14px rgba(99,102,241,.18); }
+.btn-primary:active { transform:translateY(1px); }
+.btn-outline { transition:all .18s ease; }
+.btn-outline:hover { border-color:#7169db; }
+.app-footer { color:#66758d; font-size:10px; }
+@media (min-width:761px) {
+  .navbar { display:flex; }
+  .nav-links { flex:1; }
+}
+@media (max-width:760px) {
+  .nav-links { display:flex; }
+  .nav-group { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .nav-group-label { grid-column:1/-1; }
+  .sidebar-bottom { display:none; }
+  .nav-brand { width:auto; }
+  .nav-btn { min-width:0; }
+  .result-card .card-body { min-height:250px; }
+}
