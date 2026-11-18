@@ -10,6 +10,23 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // AuraClinic dashboard chart styling (presentation only; data and scoring unchanged).
+    if (window.Chart) {
+        Chart.defaults.color = '#a6b2c7';
+        Chart.defaults.borderColor = 'rgba(126, 143, 170, 0.16)';
+        Chart.defaults.font.family = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
+        Chart.defaults.font.size = 11;
+        Chart.defaults.plugins.legend.labels.usePointStyle = true;
+        Chart.defaults.plugins.legend.labels.boxWidth = 8;
+        Chart.defaults.plugins.legend.labels.padding = 16;
+        Chart.defaults.plugins.tooltip.backgroundColor = '#18243a';
+        Chart.defaults.plugins.tooltip.borderColor = '#34445f';
+        Chart.defaults.plugins.tooltip.borderWidth = 1;
+        Chart.defaults.plugins.tooltip.titleColor = '#f4f6fb';
+        Chart.defaults.plugins.tooltip.bodyColor = '#c3cde0';
+        Chart.defaults.scale.grid.color = 'rgba(126, 143, 170, 0.12)';
+    }
+
     // ==========================================
     // 1. Tab Navigation
     // ==========================================
